@@ -32,7 +32,7 @@ export function Login () {
         <div className="flex flex-col py-20 items-center">
             <ThemeProvider theme={theme}>
                 <TextField
-                className="w-60 shadow-2xl"
+                className="w-72 shadow-2xl"
                 label = "E-mail"
                 variant="outlined"
                 size="small"
@@ -44,7 +44,7 @@ export function Login () {
                 <FormControl variant="outlined" className="shadow-2xl mt-6" size="small">
                     <InputLabel htmlFor="outlined-adornment-password">Senha</InputLabel>
                     <OutlinedInput
-                    className="w-60"
+                    className="w-72"
                     id="outlined-adornment-password"
                     type={showPassword ? 'text' : 'password'}
                     endAdornment={
