@@ -34,12 +34,18 @@ export async function performLogin(email: string, password: string) {
         }
 
         const users = await response.json();
-        const userCredentials = users.map((user: { email: string; password: string }) => ({
+
+        interface UserCredentials {
+            email: string;
+            password: string;
+        }
+
+        const userCredentials: UserCredentials[] = users.map((user: UserCredentials) => ({
             email: user.email,
             password: user.password
         }));
 
-        const userExists = userCredentials.some(user => user.email === email && user.password === password);
+        const userExists = userCredentials.some((user: UserCredentials) => user.email === email && user.password === password);
 
         if (userExists) {
             console.log('Login realizado com sucesso.');
@@ -50,7 +56,7 @@ export async function performLogin(email: string, password: string) {
         }
 
     } catch (error) {
-        if (error.name === 'AbortError') {
+        if ((error as Error).name === 'AbortError') {
             console.log('Requisição abortada devido a validação.');
             return { success: false, message: 'Requisição abortada.' };
         }
