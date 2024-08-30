@@ -80,7 +80,7 @@ export function Login() {
                 </FormControl>
             </ThemeProvider>
 
-            <SubmitButton onClick={performLogin} label="Entrar" />
+            <SubmitButton onClick={() => performLogin(email, password)} label="Entrar" />
         </form>
     );
 }
