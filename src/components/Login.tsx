@@ -40,7 +40,10 @@ export function Login() {
         <form className="flex flex-col py-20 items-center" onSubmit={handleSubmit}>
             <ThemeProvider theme={theme}>
                 <TextField
-                    className="w-72 shadow-2xl"
+                    sx={{
+                        width: '18rem',
+                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06)',
+                    }}
                     label="E-mail"
                     variant="outlined"
                     size="small"
@@ -52,10 +55,12 @@ export function Login() {
             </ThemeProvider>
 
             <ThemeProvider theme={theme}>
-                <FormControl variant="outlined" className="shadow-2xl mt-6" size="small">
+                <FormControl variant="outlined" sx={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06)', mt: 4,}} size="small">
                     <InputLabel htmlFor="outlined-adornment-password">Senha</InputLabel>
                     <OutlinedInput
-                        className="w-72"
+                        sx={{
+                            width: '18rem',
+                        }}
                         id="outlined-adornment-password"
                         type={showPassword ? 'text' : 'password'}
                         value={password}
